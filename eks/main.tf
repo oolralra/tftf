@@ -36,22 +36,22 @@ module "min-eks" {
   # cluster를 private sub에 만듬
 }
 
-data "aws_eks_cluster_auth" "this" {
-  name = "min-cluster-test"
-}
+# data "aws_eks_cluster_auth" "this" {
+#   name = "min-cluster-test"
+# }
 
-provider "kubernetes" {
-  host                   = module.min-eks.cluster_endpoint
-  cluster_ca_certificate = base64decode(module.min-eks.cluster_certificate_authority_data)
-  token                  = data.aws_eks_cluster_auth.this.token
+# provider "kubernetes" {
+#   host                   = module.min-eks.cluster_endpoint
+#   cluster_ca_certificate = base64decode(module.min-eks.cluster_certificate_authority_data)
+#   token                  = data.aws_eks_cluster_auth.this.token
   
-}
+# }
 
-provider "helm" {
-  kubernetes {
-    host                   = module.min-eks.cluster_endpoint
-    cluster_ca_certificate = base64decode(module.min-eks.cluster_certificate_authority_data)
-    token                  = data.aws_eks_cluster_auth.this.token
-  }
+# provider "helm" {
+#   kubernetes {
+#     host                   = module.min-eks.cluster_endpoint
+#     cluster_ca_certificate = base64decode(module.min-eks.cluster_certificate_authority_data)
+#     token                  = data.aws_eks_cluster_auth.this.token
+#   }
   
-}
+# }
