@@ -1,3 +1,7 @@
+provider "aws" {
+  region = "ap-northeast-2"
+}
+
 module "min-vpc" {
     source = "./vpc"
 }
