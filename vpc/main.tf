@@ -64,7 +64,7 @@ resource "aws_subnet" "pub_sub1" {
   availability_zone                           = "ap-northeast-2a"
   tags = {
     Name                        = "pub-sub1"
-    "kubernetes.io/cluster/pri-cluster" = "owned"
+    "kubernetes.io/cluster/min-cluster-test" = "owned"
     "kubernetes.io/role/elb"           = "1"
   }
   depends_on = [aws_internet_gateway.this]
@@ -78,7 +78,7 @@ resource "aws_subnet" "pub_sub2" {
   availability_zone                           = "ap-northeast-2c"
   tags = {
     Name                        = "pub-sub2"
-    "kubernetes.io/cluster/pri-cluster" = "owned"
+    "kubernetes.io/cluster/min-cluster-test" = "owned"
     "kubernetes.io/role/elb"           = "1"
   }
   depends_on = [aws_internet_gateway.this]
@@ -92,7 +92,7 @@ resource "aws_subnet" "pri_sub1" {
   availability_zone                           = "ap-northeast-2a"
   tags = {
     Name                        = "pri-sub1"
-    "kubernetes.io/cluster/pri-cluster" = "owned"
+    "kubernetes.io/cluster/min-cluster-test" = "owned"
     "kubernetes.io/role/internal-elb"   = "1"
   }
 }
@@ -104,7 +104,7 @@ resource "aws_subnet" "pri_sub2" {
   availability_zone                           = "ap-northeast-2c"
   tags = {
     Name                        = "pri-sub2"
-    "kubernetes.io/cluster/pri-cluster" = "owned"
+    "kubernetes.io/cluster/min-cluster-test" = "owned"
     "kubernetes.io/role/internal-elb"   = "1"
   }
 }
