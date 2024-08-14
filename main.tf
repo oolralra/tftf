@@ -15,4 +15,3 @@ module "min-eks" {
     pub-sub2-id = module.min-vpc.pub-sub2-id
 
 }
-
